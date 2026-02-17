@@ -1,0 +1,1 @@
+[  {    "event": "User logged in",    "timestamp": "2026-02-17T22:43:11Z"  },  {    "event": "User created a post",    "timestamp": "2026-02-17T22:43:11Z"  },  {    "event": "User liked a post",    "timestamp": "2026-02-17T22:43:11Z"  },  {    "event": "User logged out",    "timestamp": "2026-02-17T22:43:11Z"  }]
