@@ -1,0 +1,25 @@
+.timeline {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.timeline-item {
+  display: inline-block;
+  margin-right: 20px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.timeline-item h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.timeline-item p {
+  font-size: 14px;
+  color: #666;
+}
