@@ -4,23 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chronological Timeline</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        .timeline { position: relative; }
-        .event { margin: 20px 0; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
-        .event h2 { margin: 0; }
-        .event p { margin: 5px 0; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Chronological Timeline</h1>
-    <div class="timeline">
-        <!-- Timeline events will be added here -->
-        <div class="event">
-            <h2>Event Title</h2>
-            <p>Date: YYYY-MM-DD</p>
-            <p>Description of the event goes here.</p>
+    <div class="timeline-wrapper">
+        <h1>Chronological Timeline</h1>
+        <div id="timeline" class="timeline">
+            <p>Loading events...</p>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
