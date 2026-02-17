@@ -12,8 +12,13 @@ body {
 }
 
 .timeline-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 h1 {
@@ -32,9 +37,10 @@ h1 {
     padding: 40px 20px;
     gap: 30px;
     scroll-behavior: smooth;
-    background: white;
     border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    align-items: center;
+    align-content: baseline;
+    height: 100%;
 }
 
 .timeline::-webkit-scrollbar {
