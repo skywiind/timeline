@@ -20,7 +20,7 @@ async function loadTimeline() {
     }
 }
 
-// Function to render events on the timeline
+// Function to render events on the timeline with horizontal scrolling
 function renderTimeline(events) {
     const timelineContainer = document.getElementById('timeline');
     timelineContainer.innerHTML = ''; // Clear existing content
@@ -37,14 +37,17 @@ function renderTimeline(events) {
         const eventDate = new Date(event.date);
         const formattedDate = eventDate.toLocaleDateString('en-US', {
             year: 'numeric',
-            month: 'long',
+            month: 'short',
             day: 'numeric'
         });
         
         eventElement.innerHTML = `
-            <h3>${event.title || 'Untitled Event'}</h3>
-            <p>${event.description || 'No description available'}</p>
-            <time>${formattedDate}</time>
+            <div class="event-marker"></div>
+            <div class="event-content">
+                <h3>${event.title || 'Untitled Event'}</h3>
+                <p>${event.description || 'No description available'}</p>
+                <time>${formattedDate}</time>
+            </div>
         `;
         
         timelineContainer.appendChild(eventElement);
