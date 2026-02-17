@@ -1,25 +1,88 @@
-.timeline {
-  display: flex;
-  overflow-x: auto;
-  white-space: nowrap;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.timeline-item {
-  display: inline-block;
-  margin-right: 20px;
-  padding: 10px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 200px;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
 }
 
-.timeline-item h3 {
-  margin: 0;
-  font-size: 18px;
+timeline-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.timeline-item p {
-  font-size: 14px;
-  color: #666;
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+timeline {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px 0;
+    gap: 20px;
+    scroll-behavior: smooth;
+}
+
+timeline::-webkit-scrollbar {
+    height: 10px;
+}
+
+timeline::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+timeline::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+
+timeline::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+timeline-event {
+    flex-shrink: 0;
+    width: 300px;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+timeline-event:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+timeline-event h3 {
+    color: #667eea;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+timeline-event p {
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+timeline-event time {
+    display: block;
+    color: #999;
+    font-size: 0.85em;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
 }
