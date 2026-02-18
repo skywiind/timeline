@@ -32,7 +32,12 @@ function renderTimeline(seasons) {
         return;
     }
 
+    //timeline length in days
+    var timelineLength = 0;
+
     seasons.forEach(season => {
+        timelineLength += seasonLength(season);
+
         const seasonElement = document.createElement('div');
         seasonElement.className = 'timeline-season';
         seasonElement.id = season.title;
@@ -42,8 +47,27 @@ function renderTimeline(seasons) {
         renderEvents(season.events, season.title);
     });
 
+    //compute timeline length and calculate season proportions
+    seasons.forEach(season => {
+        var proportionalLength = seasonLength(season) / timelineLength;
 
+        proportionalLength = Math.round((proportionalLength + Number.EPSILON) * 100) / 100;
+
+        console.log(season.title + " " + proportionalLength);
+
+        
+    });
     
+}
+
+//returns length of a season in days
+function seasonLength(season) {
+    const startDate = new Date(season.startDate);
+    const endDate = new Date(season.endDate);
+
+    const seasonLength = Math.round((endDate - startDate) / (1000 * 60 * 60 * 24));
+
+    return seasonLength;
 }
 
 //render the events in an array loaded from season (/arc)
