@@ -42,12 +42,35 @@
       "title": "season 2",
       "description": "season 2 bro",
       "startDate": "2027-01-01T00:00:00Z",
-      "endDate": "2027-01-10T23:59:59Z",
+      "endDate": "2027-02-17T23:59:59Z",
       "events": [
         {  
           "title": "Season 2 event",  
           "description": "Officially launched the timeline application to the public.",  
           "date": "2027-02-17T12:00:00Z"  
+        }
+      ]
+    },
+    {
+      "title": "season 3",
+      "description": "yuhhhh season 3 dawg",
+      "startDate": "2027-02-18T:00:00:00Z",
+      "endDate": "2028-06-01T00:00:00Z",
+      "events": [
+        {  
+          "title": "gay af",  
+          "description": "The timeline project was initiated to visualize historical events chronologically.",  
+          "date": "2027-04-01T00:00:00Z"  
+        },  
+        {  
+          "title": "fag",  
+          "description": "Completed the initial design and architecture planning.",  
+          "date": "2027-05-15T10:30:00Z"  
+        },  
+        {  
+          "title": "wow",  
+          "description": "Started building the core functionality for event parsing and rendering.",  
+          "date": "2028-05-01T08:00:00Z"  
         }
       ]
     }

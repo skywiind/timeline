@@ -35,8 +35,15 @@ function renderTimeline(seasons) {
     //timeline length in days
     var timelineLength = 0;
 
+    //number of events
+    var numEvents = 0;
+
+    //size of one event card in px (fornow)
+    var eventScale = 350;
+
     seasons.forEach(season => {
         timelineLength += seasonLength(season);
+        numEvents += season.events.length;
 
         const seasonElement = document.createElement('div');
         seasonElement.className = 'timeline-season';
@@ -47,15 +54,18 @@ function renderTimeline(seasons) {
         renderEvents(season.events, season.title);
     });
 
-    //compute timeline length and calculate season proportions
+    // Compute season proportions and expose them as CSS variables
     seasons.forEach(season => {
-        var proportionalLength = seasonLength(season) / timelineLength;
+        let proportionalLength = seasonLength(season) / timelineLength;
 
         proportionalLength = Math.round((proportionalLength + Number.EPSILON) * 100) / 100;
 
-        console.log(season.title + " " + proportionalLength);
+        const seasonElement = document.getElementById(season.title);
+        if (seasonElement) {
+            seasonElement.style.setProperty('--season-proportion', proportionalLength * (numEvents * eventScale));
+        }
 
-        
+        console.log(season.title + " " + proportionalLength * (numEvents * eventScale));
     });
     
 }
