@@ -55,7 +55,19 @@ h1 {
     width: var(--season-proportion);
     height: 100vh;
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
+}
+
+.timeline-season-title {
+    font-style: italic;
+    font-size: 100px;
+    position: sticky;
+    bottom: 0%;
+    left: 0%;
+    top: 100%;
+    z-index: -1;
+    padding: 0px;
+    align-self: flex-start;
 }
 
 .timeline::-webkit-scrollbar {

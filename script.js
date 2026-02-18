@@ -45,12 +45,18 @@ function renderTimeline(seasons) {
     var eventScale = 350;
 
     seasons.forEach(season => {
-        timelineLength += seasonLength(season);
         numEvents += season.events.length;
 
-        const seasonElement = document.createElement('div');
+        //create season div
+        var seasonElement = document.createElement('div');
         seasonElement.className = 'timeline-season';
         seasonElement.id = season.title;
+
+        //create season title div
+        const seasonTitleElement = document.createElement('div');
+        seasonTitleElement.className = 'timeline-season-title';
+        seasonTitleElement.innerHTML = `${season.title}`;
+        seasonElement.appendChild(seasonTitleElement);
 
         timelineContainer.appendChild(seasonElement);
         
@@ -61,6 +67,7 @@ function renderTimeline(seasons) {
     seasons.forEach(season => {
         console.log(season.title);
         var proportionalLength = (Math.round(((seasonLength(season) / timelineLength) + Number.EPSILON) * 100) / 100) * (numEvents * eventScale);
+
 
         const seasonElement = document.getElementById(season.title);
         if (seasonElement) {
@@ -80,17 +87,6 @@ function backgroundGradient(hexColor) {
     var sat = hslColor[1];
     var lum = hslColor[2];
 
-    console.log(`${hue}, ${sat}, ${lum}`);
-
-    var newHue = hslAdd(hue, -.1);
-    var newSat = hslAdd(sat, -.1);
-    var newLum = hslAdd(lum, -.05);
-
-    console.log(`${newHue}, ${newSat}, ${newLum}`);
-
-    var gradientColor = hslToRgb(newHue, newSat, newLum);
-    console.log("gradient color: " + gradientColor);
-
     const a = [.5, .5, .5];
     const b = [.5, .5, .5];
     const c = [1, 1, 1];
@@ -106,8 +102,6 @@ function generateColor(vecA, vecB, vecC, vecD) {
     var r = 0.0;
     var g = 0.0;
     var b = 0.0;
-
-    console.log(vecA);
 
     r = vecA[0] + vecB[0] * (Math.cos(2 * Math.PI * (vecC[0] * .1 + vecD[0])));
     g = vecA[1] + vecB[1] * (Math.cos(2 * Math.PI * (vecC[1] * .3 + vecD[1])));
@@ -222,7 +216,7 @@ function dateIntervalDays(a, b) {
 //render the events in an array loaded from season (/arc)
 function renderEvents(events, seasonTitle) {
     const seasonContainer = document.getElementById(seasonTitle);
-    seasonContainer.innerHTML = '';
+    // seasonContainer.innerHTML = '';
 
     if (events.length === 0 ) {
         seasonContainer.innerHTML = '<p>No events found.</p>';
