@@ -2,77 +2,77 @@
   "seasons": [
     {
       "title": "season1",
-      "color": "red",
+      "color": "#fa1005",
       "description": "season 1 description",
       "startDate": "2026-01-01T00:00:00Z",
       "endDate": "2026-12-31T23:59:59Z",
       "events" :[
         {  
-          "title": "Project Start",  
-          "description": "The timeline project was initiated to visualize historical events chronologically.",  
+          "title": "event 1",  
+          "description": "okay yeah boyyyeeeee.",  
           "date": "2026-01-01T00:00:00Z"  
         },  
         {  
-          "title": "First Milestone",  
-          "description": "Completed the initial design and architecture planning.",  
+          "title": "swag",  
+          "description": "suck it hoe.",  
           "date": "2026-01-15T10:30:00Z"  
         },  
         {  
-          "title": "Development Phase",  
-          "description": "Started building the core functionality for event parsing and rendering.",  
+          "title": "this title is really long because i want to make sure the wrapping works well enough ohhhh yeah wowowowowowoowowowow",  
+          "description": "aaaaaaa.",  
           "date": "2026-02-01T08:00:00Z"  
         },  
         {  
-          "title": "Testing Stage",  
-          "description": "Began comprehensive testing of all timeline features.",  
+          "title": "event idk",  
+          "description": "now this is a long description because I want to test the description part of the wrapping okaayyyyy yeah yeah yeah yeah yeah yeah yeah.",  
           "date": "2026-02-10T14:15:00Z"  
         },  
         {  
-          "title": "Beta Release",  
-          "description": "Released the beta version to early users for feedback.",  
+          "title": "shoutout asian girls",  
+          "description": "let the lights dim sum.",  
           "date": "2026-02-15T16:45:00Z"  
         },  
         {  
-          "title": "Final Launch",  
-          "description": "Officially launched the timeline application to the public.",  
+          "title": "what the fuck kind of timeline is this",  
+          "description": "this is the goopchat timeline.",  
           "date": "2026-02-17T12:00:00Z"  
         }
       ]
     },
     {
       "title": "season2",
-      "color": "orange",
+      "color": "#ff8000",
       "description": "season 2 bro",
       "startDate": "2027-01-01T00:00:00Z",
       "endDate": "2027-02-17T23:59:59Z",
       "events": [
         {  
           "title": "Season 2 event",  
-          "description": "Officially launched the timeline application to the public.",  
+          "description": "season 2 what.",  
           "date": "2027-02-17T12:00:00Z"  
         }
       ]
     },
     {
       "title": "season3",
-      "color": "yellow",
+      "color": "#eede10",
       "description": "yuhhhh season 3 dawg",
       "startDate": "2027-02-18T:00:00:00Z",
       "endDate": "2028-06-01T00:00:00Z",
       "events": [
         {  
           "title": "gay af",  
-          "description": "The timeline project was initiated to visualize historical events chronologically.",  
+          "description": "gay af backwards is gay af .",  
           "date": "2027-04-01T00:00:00Z"  
         },  
         {  
           "title": "fag",  
-          "description": "Completed the initial design and architecture planning.",  
+          "description": "snarf.",  
           "date": "2027-05-15T10:30:00Z"  
         },  
         {  
           "title": "wow",  
-          "description": "Started building the core functionality for event parsing and rendering.",  
+          "description": "lorem ipsum BITCH.",  
           "date": "2028-05-01T08:00:00Z"  
         }
       ]
