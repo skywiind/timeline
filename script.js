@@ -7,13 +7,15 @@ async function loadTimeline() {
             throw new Error('Failed to load events.json');
         }
         
-        const events = await response.json();
+        const timeline = await response.json();
         
+        const seasons = timeline.seasons;
+
         // Sort events by date
-        events.sort((a, b) => new Date(a.date) - new Date(b.date));
+        seasons.sort((a, b) => new Date(a.date) - new Date(b.date));
         
         // Render events on the timeline
-        renderTimeline(events);
+        renderTimeline(seasons);
     } catch (error) {
         console.error('Error loading timeline:', error);
         document.getElementById('timeline').innerHTML = '<p style="color: red;">Error loading events. Please check the console.</p>';
@@ -21,15 +23,39 @@ async function loadTimeline() {
 }
 
 // Function to render events on the timeline with horizontal scrolling
-function renderTimeline(events) {
+function renderTimeline(seasons) {
     const timelineContainer = document.getElementById('timeline');
     timelineContainer.innerHTML = ''; // Clear existing content
     
-    if (events.length === 0) {
+    if (seasons.length === 0) {
         timelineContainer.innerHTML = '<p>No events found.</p>';
         return;
     }
+
+    seasons.forEach(season => {
+        const seasonElement = document.createElement('div');
+        seasonElement.className = 'timeline-season';
+        seasonElement.id = season.title;
+
+        timelineContainer.appendChild(seasonElement);
+        
+        renderEvents(season.events, season.title);
+    });
+
+
     
+}
+
+//render the events in an array loaded from season (/arc)
+function renderEvents(events, seasonTitle) {
+    const seasonContainer = document.getElementById(seasonTitle);
+    seasonContainer.innerHTML = '';
+
+    if (events.length === 0 ) {
+        seasonContainer.innerHTML = '<p>No events found.</p>';
+        return;
+    }
+
     events.forEach(event => {
         const eventElement = document.createElement('div');
         eventElement.className = 'timeline-event';
@@ -50,7 +76,7 @@ function renderTimeline(events) {
             </div>
         `;
         
-        timelineContainer.appendChild(eventElement);
+        seasonContainer.appendChild(eventElement);
     });
 }
 
