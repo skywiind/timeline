@@ -51,7 +51,7 @@ h1 {
     align-content: baseline;
     position: relative;
     isolation: isolate;
-    padding: 0px 20px 0px 20px;
+    padding: 0px 20px 0px 0px;
     width: var(--season-proportion);
     height: 100vh;
     pointer-events: none;
@@ -59,15 +59,22 @@ h1 {
 }
 
 .timeline-season-title {
-    font-style: italic;
-    font-size: 100px;
+    font-size: 3rem;
     position: sticky;
-    bottom: 0%;
-    left: 0%;
-    top: 100%;
+    left: 0;
+    bottom: 1%;
+    top: auto;
+    width: 0;
+    min-width: 0;
+    flex: 0 0 0;
+    overflow: visible;
+    white-space: nowrap;
+    line-height: 1;
     z-index: -1;
     padding: 0px;
-    align-self: flex-start;
+    align-self: flex-end;
+    pointer-events: none;
+    transform: scale(1.3, 2.0);
 }
 
 .timeline::-webkit-scrollbar {
