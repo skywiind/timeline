@@ -52,25 +52,10 @@ h1 {
     position: relative;
     isolation: isolate;
     padding: 0px 20px 0px 20px;
-/*     min-width: clamp(280px, calc(100vw * var(--season-proportion, 0.2) * 2.4), 85vw); */
-}
-
-#season\ 1.timeline-season {
-    content: '';
-    height: 100vh;
     width: var(--season-proportion);
-    background: red;
-    z-index: 0;
-    pointer-events: none;
-}
-
-#season\ 2.timeline-season {
-    content: '';
     height: 100vh;
-    width: var(--season-proportion);
-    background: orange;
-    z-index: 0;
     pointer-events: none;
+    z-index: 0;
 }
 
 .timeline::-webkit-scrollbar {

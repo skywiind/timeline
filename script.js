@@ -24,6 +24,7 @@ async function loadTimeline() {
 
 // Function to render events on the timeline with horizontal scrolling
 function renderTimeline(seasons) {
+    var stylesheet = document.styleSheets[0];
     const timelineContainer = document.getElementById('timeline');
     timelineContainer.innerHTML = ''; // Clear existing content
     
@@ -63,6 +64,9 @@ function renderTimeline(seasons) {
         const seasonElement = document.getElementById(season.title);
         if (seasonElement) {
             seasonElement.style.setProperty('--season-proportion', proportionalLength * (numEvents * eventScale));
+            const styleRule = `#${season.title}.timeline-season { background: ${season.color} }`
+            console.log(styleRule)
+            stylesheet.insertRule(styleRule);
         }
 
         console.log(season.title + " " + proportionalLength * (numEvents * eventScale));
